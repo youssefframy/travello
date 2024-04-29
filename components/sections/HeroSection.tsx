@@ -1,13 +1,20 @@
+import Image from "next/image";
+
 interface HeroBackgroundProps {
   children: React.ReactNode;
 }
 // HeroBackground.js
 const HeroBackground: React.FC<HeroBackgroundProps> = ({ children }) => {
   return (
-    <div className="relative text-white">
+    <div className="relative h-screen text-white">
       {/* Background image and overlay */}
-      <img src="/assets/hero-bg.png" className="w-full h-screen object-cover" />
-      <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-30">
+      <Image
+        src="/assets/hero-bg.png"
+        className="w-full h-screen object-cover"
+        alt="Hero background image"
+        fill
+      />
+      <div className="absolute top-0 left-0 w-full h-screen bg-opacity-30">
         {children}
       </div>
     </div>

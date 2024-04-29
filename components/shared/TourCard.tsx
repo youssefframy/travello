@@ -1,6 +1,7 @@
 import React from "react";
 import { Star } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface TourCardProps {
   title: string;
@@ -10,6 +11,7 @@ export interface TourCardProps {
   imgSrc: string;
   reviews: number;
   duration: number;
+  slug: string;
   featured?: boolean;
 }
 
@@ -17,11 +19,13 @@ export const TourCard: React.FC<TourCardProps> = (props) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <div className="relative overflow-clip">
-        <Link href="#">
-          <img
+        <Link href={`/tours/${props.slug}`} className="relative w-full">
+          <Image
             className="w-full hover:scale-110 ease-in-out duration-300 transition-all"
             src={props.imgSrc}
             alt={props.title}
+            width={500}
+            height={300}
           />
         </Link>
         {props.featured && (

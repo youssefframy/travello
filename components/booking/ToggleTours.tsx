@@ -19,7 +19,7 @@ const ToggleTours: React.FC = () => {
           }
         )}
       >
-        Our Trips
+        Our Featured Trips
       </Link>
       <Link
         href="?tour=packages"
@@ -31,7 +31,7 @@ const ToggleTours: React.FC = () => {
           }
         )}
       >
-        Our Packages
+        Our Featured Packages
       </Link>
     </div>
   );

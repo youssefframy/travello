@@ -8,6 +8,7 @@ export const packages = [
     reviews: 3028,
     duration: 11,
     featured: true,
+    slug: "adventure-6-all-egypt-hurghada-sinai",
   },
   {
     title: "Adventure 3 Cairo - Aswan – Luxor",
@@ -18,6 +19,7 @@ export const packages = [
     reviews: 4,
     duration: 9,
     featured: true,
+    slug: "advanture-3-cairo-aswan-luxor",
   },
   {
     title:
@@ -30,6 +32,7 @@ export const packages = [
     reviews: 702,
     duration: 21,
     featured: true,
+    slug: "great-adventure-5-cairo-cruise-luxor-aswan-abu-simble-hurghada-alexandria",
   },
   {
     title: "Classic Tour 2-Cairo-Aswan-lake Nasser",
@@ -39,7 +42,8 @@ export const packages = [
     imgSrc: "/trips/aswan.jpeg",
     reviews: 100,
     duration: 10,
-    featured: false,
+    featured: true,
+    slug: "classic-tour-2-cairo-aswan-lake-nasser",
   },
   {
     title: "Classic Tour 10 Cairo – Alexandria",
@@ -49,7 +53,8 @@ export const packages = [
     imgSrc: "/trips/sharm.webp",
     reviews: 30,
     duration: 6,
-    featured: false,
+    featured: true,
+    slug: "classic-tour-10-cairo-alexandria",
   },
   {
     title: "Hurghada / Diving Course / Luxor / Cairo",
@@ -59,7 +64,8 @@ export const packages = [
     imgSrc: "/trips/scuba-diving.jpeg",
     reviews: 800,
     duration: 11,
-    featured: false,
+    featured: true,
+    slug: "hurghada-diving-course-luxor-cairo",
   },
 ];
 
@@ -74,6 +80,7 @@ export const trips = [
     reviews: 1280,
     duration: 1,
     featured: true,
+    slug: "cairo",
   },
   {
     title: "Hurghada",
@@ -84,6 +91,7 @@ export const trips = [
     reviews: 500,
     duration: 1,
     featured: true,
+    slug: "hurghada",
   },
   {
     title: "Luxor",
@@ -94,6 +102,7 @@ export const trips = [
     reviews: 300,
     duration: 1,
     featured: true,
+    slug: "luxor",
   },
   {
     title: "Aswan",
@@ -103,7 +112,8 @@ export const trips = [
     imgSrc: "/trips/aswan.jpeg",
     reviews: 4000,
     duration: 1,
-    featured: false,
+    featured: true,
+    slug: "aswan",
   },
   {
     title: "Alexandria",
@@ -113,7 +123,8 @@ export const trips = [
     imgSrc: "/trips/sharm.webp",
     reviews: 5000,
     duration: 1,
-    featured: false,
+    featured: true,
+    slug: "alexandria",
   },
   {
     title: "Sharm El Sheikh",
@@ -123,6 +134,7 @@ export const trips = [
     imgSrc: "/trips/scuba-diving.jpeg",
     reviews: 3028,
     duration: 1,
-    featured: false,
+    featured: true,
+    slug: "sharm-el-sheikh",
   },
 ];
