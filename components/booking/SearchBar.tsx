@@ -15,7 +15,7 @@ export const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center space-x-4 p-4 bg-white shadow-md">
+    <div className="hidden md:flex items-center justify-center space-x-4 p-4 bg-white shadow-md">
       <div className="flex items-center space-x-2">
         <MapPin className="text-red-500" />
         <label htmlFor="destination" className="sr-only">

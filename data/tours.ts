@@ -63,4 +63,66 @@ export const packages = [
   },
 ];
 
-export const trips = [];
+// trips are simply one day trip in egypt try to add 6 trips to an array with the same images as packages but with description and naming for one day only
+export const trips = [
+  {
+    title: "Cairo",
+    description: "Cairo",
+    days: 1,
+    price: 50.0,
+    imgSrc: "/trips/hurghada.jpeg",
+    reviews: 1280,
+    duration: 1,
+    featured: true,
+  },
+  {
+    title: "Hurghada",
+    description: "Hurghada",
+    days: 1,
+    price: 50.0,
+    imgSrc: "/trips/abu-simple.jpeg",
+    reviews: 500,
+    duration: 1,
+    featured: true,
+  },
+  {
+    title: "Luxor",
+    description: "Luxor",
+    days: 1,
+    price: 50.0,
+    imgSrc: "/trips/hatshepsut.jpeg",
+    reviews: 300,
+    duration: 1,
+    featured: true,
+  },
+  {
+    title: "Aswan",
+    description: "Aswan",
+    days: 1,
+    price: 50.0,
+    imgSrc: "/trips/aswan.jpeg",
+    reviews: 4000,
+    duration: 1,
+    featured: false,
+  },
+  {
+    title: "Alexandria",
+    description: "Alexandria",
+    days: 1,
+    price: 50.0,
+    imgSrc: "/trips/sharm.webp",
+    reviews: 5000,
+    duration: 1,
+    featured: false,
+  },
+  {
+    title: "Sharm El Sheikh",
+    description: "Sharm El Sheikh",
+    days: 1,
+    price: 50.0,
+    imgSrc: "/trips/scuba-diving.jpeg",
+    reviews: 3028,
+    duration: 1,
+    featured: false,
+  },
+];

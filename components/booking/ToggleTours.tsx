@@ -8,7 +8,7 @@ const ToggleTours: React.FC = () => {
   const searchParams = useSearchParams();
   const activeSection = searchParams.get("tour") || "trips";
   return (
-    <div className="flex justify-center font-semibold p-5 rounded-md gap-2">
+    <div className="flex justify-center font-semibold text-sm md:text-base p-5 rounded-md gap-2">
       <Link
         scroll={false}
         href="?tour=trips"
@@ -19,7 +19,7 @@ const ToggleTours: React.FC = () => {
           }
         )}
       >
-        Our Featured Trips
+        Our Trips
       </Link>
       <Link
         href="?tour=packages"
@@ -31,7 +31,7 @@ const ToggleTours: React.FC = () => {
           }
         )}
       >
-        Our Featured Packages
+        Our Packages
       </Link>
     </div>
   );

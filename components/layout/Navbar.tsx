@@ -7,13 +7,7 @@ export const Navbar: React.FC = () => {
           Home
         </a>
         <a href="#" className="">
-          Offers
-        </a>
-        <a href="#" className="">
-          Packages
-        </a>
-        <a href="#" className="">
-          Hotels
+          Tours
         </a>
         <a href="#" className="">
           About Us
