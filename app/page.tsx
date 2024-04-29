@@ -15,6 +15,9 @@ export default function Home() {
         {packages.map((tour, index) => (
           <TourCard key={index} {...tour} />
         ))}
+        {trips.map((trip, index) => (
+          <TourCard key={index} {...trip} />
+        ))}
       </div>
       <DiscoverSection />
     </main>
