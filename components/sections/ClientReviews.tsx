@@ -16,16 +16,9 @@ import {
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-interface ClientReviewsProps {
-  name: string;
-  rating: number;
-  review: string;
-}
-export const ClientReviews: React.FC<ClientReviewsProps> = ({
-  name,
-  rating,
-  review,
-}) => {
+import { clients } from "@/data/reviews";
+
+export const ClientReviews: React.FC = () => {
   return (
     <section className="w-full flex flex-col justify-center items-center p-5">
       <h2 className="font-bold text-2xl">Client Reviews</h2>
@@ -36,7 +29,7 @@ export const ClientReviews: React.FC<ClientReviewsProps> = ({
         className="w-full md:max-w-3xl lg:max-w-5xl"
       >
         <CarouselContent className="p-2 md:p-4">
-          {Array.from({ length: 5 }).map((_, index) => (
+          {clients.map((client, index) => (
             <CarouselItem
               key={index}
               className="hover:scale-105 transition-all ease-in-out duration-300 md:basis-1/2 lg:basis-1/3"
@@ -53,7 +46,7 @@ export const ClientReviews: React.FC<ClientReviewsProps> = ({
                         <AvatarFallback>CN</AvatarFallback>
                       </Avatar>
                       <CardDescription className="text-lg font-semibold">
-                        {name}
+                        {client.name}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="flex">
@@ -61,13 +54,15 @@ export const ClientReviews: React.FC<ClientReviewsProps> = ({
                         <Star
                           key={index}
                           className={`w-5 h-5 ${
-                            index < rating ? "text-yellow-400" : "text-gray-300"
+                            index < client.rating
+                              ? "text-yellow-400"
+                              : "text-gray-300"
                           }`}
                         />
                       ))}
                     </CardContent>
                     <CardContent className="text-gray-700 text-base">
-                      {review}
+                      {client.review}
                     </CardContent>
                   </div>
                 </Card>
