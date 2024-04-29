@@ -1,23 +1,22 @@
 import SearchBar from "@/components/booking/SearchBar";
 import ToggleTours from "@/components/booking/ToggleTours";
 import { ClientReviews } from "@/components/sections/ClientReviews";
+import { TourContainer } from "@/components/sections/TourContainer";
 import DiscoverSection from "@/components/sections/DiscoverySection";
 import HeroSection from "@/components/sections/HeroSection";
-import { TourContainer } from "@/components/sections/TourContainer";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <main className="">
       <HeroSection />
       <SearchBar />
-      <ToggleTours />
-      <TourContainer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ToggleTours />
+        <TourContainer />
+      </Suspense>
       <DiscoverSection />
-      <ClientReviews
-        name="Kody Byrd"
-        rating={4}
-        review="Nam dapibus nisi vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum."
-      />
+      <ClientReviews />
     </main>
   );
 }
