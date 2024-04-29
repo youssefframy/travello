@@ -43,7 +43,7 @@ export const ClientReviews: React.FC<ClientReviewsProps> = ({
             >
               <div className="p-1">
                 <Card>
-                  <div className="max-w-xs rounded overflow-hidden shadow-lg md:p-5">
+                  <div className="rounded overflow-hidden shadow-lg md:p-5">
                     <CardHeader className="flex flex-row gap-4 items-start justify-start">
                       <Avatar>
                         <AvatarImage
