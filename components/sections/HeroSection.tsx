@@ -1,40 +1,27 @@
 import Image from "next/image";
 
-interface HeroBackgroundProps {
-  children: React.ReactNode;
+interface HeroSectionProps {
+  imgSrc: string;
+  content: string;
 }
-// HeroBackground.js
-const HeroBackground: React.FC<HeroBackgroundProps> = ({ children }) => {
+
+export const HeroSection: React.FC<HeroSectionProps> = ({
+  imgSrc,
+  content,
+}) => {
   return (
-    <div className="relative h-screen text-white">
-      {/* Background image and overlay */}
+    <div className="relative h-96  text-white">
       <Image
-        src="/assets/hero-bg.png"
-        className="w-full h-screen object-cover"
+        src={imgSrc}
+        className="w-full object-cover"
         alt="Hero background image"
         fill
       />
-      <div className="absolute top-0 left-0 w-full h-screen bg-opacity-30">
-        {children}
+      <div className="absolute top-0 left-0 w-full h-96 bg-opacity-30">
+        <div className="absolute top-1/3 w-full text-center">
+          <h1 className="text-6xl font-bold">{content}</h1>
+        </div>
       </div>
     </div>
   );
 };
-
-const HeroContent = () => {
-  return (
-    <div className="absolute top-1/3 w-full text-center">
-      <h1 className="text-6xl font-bold">Explore, Dream, Travel</h1>
-    </div>
-  );
-};
-
-const HeroSection = () => {
-  return (
-    <HeroBackground>
-      <HeroContent />
-    </HeroBackground>
-  );
-};
-
-export default HeroSection;

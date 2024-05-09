@@ -17,7 +17,7 @@ export interface TourCardProps {
 
 export const TourCard: React.FC<TourCardProps> = (props) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="w-80 max-h-[500px] rounded-lg overflow-hidden shadow-lg">
       <div className="relative overflow-clip">
         <Link href={`/tours/${props.slug}`} className="relative w-full">
           <Image
@@ -35,22 +35,24 @@ export const TourCard: React.FC<TourCardProps> = (props) => {
         )}
       </div>
       <div className="px-6 py-4">
-        <h3 className="font-bold text-xl mb-2">{props.title}</h3>
+        <h3 className="font-bold text-lg mb-2">{props.title}</h3>
         <p className="text-gray-700 text-base mb-4">{props.description}</p>
-        <div className="flex items-center">
+        <div className="flex items-center text-center">
           <Star className="w-5 h-5 text-yellow-500" />
           <Star className="w-5 h-5 text-yellow-500" />
           <Star className="w-5 h-5 text-yellow-500" />
           <Star className="w-5 h-5 text-yellow-500" />
           <Star className="w-5 h-5 text-yellow-500" />
-          <span className="ml-2 text-gray-600">{props.reviews} Reviews</span>
+          <span className="ml-2 text-gray-600 text-sm">
+            {props.reviews} Reviews
+          </span>
         </div>
       </div>
       <div className="px-6 pb-4">
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
           {props.duration} days
         </span>
-        <span className="text-xl font-semibold">from ${props.price}</span>
+        <span className="text-base font-semibold">from ${props.price}</span>
       </div>
     </div>
   );
