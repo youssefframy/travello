@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 
 import Providers from "@/queryProvider";
 import "./globals.css";
+import AuthModals from "@/components/shared/AuthModals";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <AuthModals />
         <Navbar />
         <Providers>{children}</Providers>
         <Toaster expand position="top-right" closeButton />

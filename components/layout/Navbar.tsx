@@ -44,10 +44,10 @@ export const Navbar: React.FC = () => {
         </Link>
       </div>
       <div>
-        <Link href="#" className=" mr-4">
+        <Link href="?auth=login" className=" mr-4">
           Sign In
         </Link>
-        <Link href="#" className="">
+        <Link href="?auth=signup" className="">
           Sign Up
         </Link>
       </div>
