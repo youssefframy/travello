@@ -17,7 +17,7 @@ export interface TourCardProps {
 
 export const TourCard: React.FC<TourCardProps> = (props) => {
   return (
-    <div className="w-80 max-h-[500px] rounded-lg overflow-hidden shadow-lg">
+    <div className="w-80 h-[450px] rounded-lg overflow-hidden shadow-lg">
       <div className="relative overflow-clip">
         <Link href={`/tours/${props.slug}`} className="relative w-full">
           <Image
