@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import Providers from "@/queryProvider";
 import "./globals.css";
 import AuthModals from "@/components/shared/AuthModals";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthModals />
+        <Suspense fallback={<div>Loading...</div>}>
+          <AuthModals />
+        </Suspense>
         <Navbar />
         <Providers>{children}</Providers>
         <Toaster expand position="top-right" closeButton />
