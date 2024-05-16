@@ -1,8 +1,9 @@
-import ToggleTours from "@/components/booking/ToggleTours";
 import { FilterSidebar } from "@/components/layout/FilterSidebar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TourContainer } from "@/components/sections/TourContainer";
 import { Suspense } from "react";
+
+import ToggleTours from "@/components/booking/ToggleTours";
 
 export default function ToursPage() {
   return (
