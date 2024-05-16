@@ -10,11 +10,6 @@ export interface TourDetails {
   languages: string[];
   description: string;
   highlights: string[];
-  priceOptions: PriceOption[];
-  imageUrl: string;
-}
-
-export interface PriceOption {
-  description: string;
   price: number;
+  imageUrl: string;
 }

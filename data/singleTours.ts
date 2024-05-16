@@ -19,12 +19,6 @@ export const tourData: TourDetails = {
     "Beach relaxation and optional scuba diving in Hurghada",
     "Cultural experiences including traditional Egyptian meals and entertainment",
   ],
-  priceOptions: [
-    { description: "3-star hotels", price: 990.0 },
-    { description: "4-star hotels", price: 1150.0 },
-    { description: "5-star hotels", price: 1350.0 },
-    { description: "Single Room Supplement", price: 250.0 },
-    { description: "Optional Scuba Diving Package", price: 300.0 },
-  ],
+  price: 990,
   imageUrl: "/assets/hurghada.jpeg",
 };

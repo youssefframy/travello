@@ -8,7 +8,7 @@ export const TourContainer: React.FC = () => {
   const searchParams = useSearchParams();
   const tourType = searchParams.get("tour") || "trips";
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    <section className="flex flex-wrap justify-center items-start gap-8 p-4">
       {tourType === "packages" &&
         packages.map((trip, index) => <TourCard key={index} {...trip} />)}
 

@@ -1,7 +1,12 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
+import type { Metadata } from "next";
+import { Toaster } from "sonner";
+
+import Providers from "@/queryProvider";
+import "./globals.css";
+import AuthModals from "@/components/shared/AuthModals";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <AuthModals />
+        </Suspense>
         <Navbar />
-        {children}
+        <Providers>{children}</Providers>
+        <Toaster expand position="top-right" closeButton />
       </body>
     </html>
   );
