@@ -13,3 +13,21 @@ export interface TourDetails {
   price: number;
   imageUrl: string;
 }
+
+export interface Tour {
+  id: string;
+  name: string;
+  description: string;
+  duration: string;
+  location: string;
+  price: number;
+  providerId: string;
+  rating: number;
+  review: number;
+  status: string;
+  tripId: string;
+  type: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string;
+}

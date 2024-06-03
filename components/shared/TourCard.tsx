@@ -4,38 +4,45 @@ import Link from "next/link";
 import Image from "next/image";
 
 export interface TourCardProps {
-  title: string;
+  id: string;
+  name: string;
   description: string;
-  days: number;
+  duration: string;
+  location: string;
   price: number;
-  imgSrc: string;
-  reviews: number;
-  duration: number;
-  slug: string;
-  featured?: boolean;
+  providerId: string;
+  rating: number;
+  review: number;
+  status: string;
+  tripId: string;
+  type: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string;
+  index:number;
 }
 
 export const TourCard: React.FC<TourCardProps> = (props) => {
   return (
     <div className="w-80 h-[450px] rounded-lg overflow-hidden shadow-lg">
       <div className="relative overflow-clip">
-        <Link href={`/tours/${props.slug}`} className="relative w-full">
+        <Link href={`/tours/${props.id}`} className="relative w-full">
           <Image
             className="w-full hover:scale-110 ease-in-out duration-300 transition-all"
-            src={props.imgSrc}
-            alt={props.title}
+            src={"/trips/aswan.jpeg"}
+            alt={props.name}
             width={500}
             height={300}
           />
         </Link>
-        {props.featured && (
+        {!(props.index % 2) && (
           <span className="absolute top-0 right-0 bg-yellow-400 text-xs uppercase px-2 py-1 rounded-bl-lg text-black font-bold">
             Featured
           </span>
         )}
       </div>
       <div className="px-6 py-4">
-        <h3 className="font-bold text-lg mb-2">{props.title}</h3>
+        <h3 className="font-bold text-lg mb-2">{props.name}</h3>
         <p className="text-gray-700 text-base mb-4">{props.description}</p>
         <div className="flex items-center text-center">
           <Star className="w-5 h-5 text-yellow-500" />
@@ -44,7 +51,7 @@ export const TourCard: React.FC<TourCardProps> = (props) => {
           <Star className="w-5 h-5 text-yellow-500" />
           <Star className="w-5 h-5 text-yellow-500" />
           <span className="ml-2 text-gray-600 text-sm">
-            {props.reviews} Reviews
+            {Math.random()} Reviews
           </span>
         </div>
       </div>
