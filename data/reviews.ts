@@ -6,39 +6,33 @@ interface Client {
 
 export const clients: Client[] = [
   {
-    name: "Shad Mirza",
+    name: "Emily Parker",
     rating: 5,
     review:
-      "I had a great experience with this company. They were very professional and I would recommend them to anyone.",
+      "Absolutely amazing experience! The travel assistant was incredibly helpful, knowledgeable, and made my trip seamless. I highly recommend their services.",
   },
   {
-    name: "Shad Mirza",
+    name: "Michael Johnson",
     rating: 5,
     review:
-      "I had a great experience with this company. They were very professional and I would recommend them to anyone.",
+      "Fantastic service! The travel assistant went above and beyond to ensure everything was taken care of. I couldn't have asked for a better experience.",
   },
   {
-    name: "Shad Mirza",
+    name: "Sophia Nguyen",
     rating: 5,
     review:
-      "I had a great experience with this company. They were very professional and I would recommend them to anyone.",
+      "Exceptional assistance throughout my journey! The travel assistant was prompt, courteous, and made sure every detail was attended to. Will definitely be using their services again.",
   },
   {
-    name: "Shad Mirza",
+    name: "William Chen",
     rating: 5,
     review:
-      "I had a great experience with this company. They were very professional and I would recommend them to anyone.",
+      "Outstanding support from the travel assistant! From booking to itinerary planning, everything was handled smoothly and professionally. Highly impressed!",
   },
   {
-    name: "Shad Mirza",
+    name: "Olivia Smith",
     rating: 5,
     review:
-      "I had a great experience with this company. They were very professional and I would recommend them to anyone.",
-  },
-  {
-    name: "Shad Mirza",
-    rating: 5,
-    review:
-      "I had a great experience with this company. They were very professional and I would recommend them to anyone.",
+      "Incredible experience! The travel assistant was a lifesaver, making my trip stress-free and enjoyable. Their expertise and attention to detail were truly commendable.",
   },
 ];

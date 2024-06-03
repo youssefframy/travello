@@ -36,14 +36,12 @@ export const ClientReviews: React.FC = () => {
             >
               <div className="p-1">
                 <Card>
-                  <div className="rounded overflow-hidden shadow-lg md:p-5">
+                  <div className="rounded h-96 overflow-hidden shadow-lg md:p-5">
                     <CardHeader className="flex flex-row gap-4 items-start justify-start">
                       <Avatar>
-                        <AvatarImage
-                          src="https://github.com/shadcn.png"
-                          alt="@shadcn"
-                        />
-                        <AvatarFallback>CN</AvatarFallback>
+                        <AvatarFallback className="uppercase">
+                          {client.name[0] + client.name[1]}
+                        </AvatarFallback>
                       </Avatar>
                       <CardDescription className="text-lg font-semibold">
                         {client.name}
