@@ -10,7 +10,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   content,
 }) => {
   return (
-    <div className="relative h-96  text-white">
+    <div className="relative h-96 text-white">
       <Image
         src={imgSrc}
         className="w-full object-cover"

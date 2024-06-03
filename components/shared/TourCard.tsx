@@ -19,7 +19,7 @@ export interface TourCardProps {
   createdAt: string;
   updatedAt: string;
   deletedAt: string;
-  index:number;
+  index: number;
 }
 
 export const TourCard: React.FC<TourCardProps> = (props) => {
@@ -51,7 +51,8 @@ export const TourCard: React.FC<TourCardProps> = (props) => {
           <Star className="w-5 h-5 text-yellow-500" />
           <Star className="w-5 h-5 text-yellow-500" />
           <span className="ml-2 text-gray-600 text-sm">
-            {Math.random()} Reviews
+            {/* Create a random number from 1000 - 6000 */}
+            {Math.floor(Math.random() * 5000) + 1000} reviews
           </span>
         </div>
       </div>

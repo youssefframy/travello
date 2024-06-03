@@ -1,12 +1,13 @@
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
-import type { Metadata } from "next";
 import { Toaster } from "sonner";
+import type { Metadata } from "next";
 
 import Providers from "@/queryProvider";
 import "./globals.css";
 import AuthModals from "@/components/shared/AuthModals";
 import { Suspense } from "react";
+import Chatbot from "@/components/ui/Chatbot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Navbar />
         <Providers>{children}</Providers>
         <Toaster expand position="top-right" closeButton />
+        <Chatbot />
       </body>
     </html>
   );
