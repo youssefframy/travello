@@ -24,11 +24,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+    
+        <Providers>
         <Suspense fallback={<div>Loading...</div>}>
           <AuthModals />
         </Suspense>
         <Navbar />
-        <Providers>{children}</Providers>
+          {children}
+          </Providers>
         <Toaster expand position="top-right" closeButton />
         <Chatbot />
       </body>

@@ -6,7 +6,10 @@ import { setSession } from "@/app/actions/setSession";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import InputFieldCompact from "../shared/InputFieldCompact";
-
+import { useMutation } from "@tanstack/react-query";
+import { signin } from "@/app/api/auth/auth.query";
+import { ACCESS_TOKEN } from "@/lib/const";
+import Cookies from "js-cookie";
 interface LoginFormValues {
   username_or_email_or_mobile: string;
   password: string;
@@ -26,9 +29,25 @@ function LoginForm() {
     // resolver: zodResolver(loginDataSchema),
   });
   // const { mutate: loginMutation, isPending, isError } = useLogin();
+const {mutate,isPending,isSuccess,isError}=useMutation({
+  mutationFn:signin,
+  onSuccess:(res)=>{
+    // setSession(user);
+    Cookies.set(ACCESS_TOKEN,res.token)
+          reset();
+          toast.success("You have been logged in successfully");
+  },
+  onError:()=>{
+    toast.error("Invalid username or password")
+  }
 
+})
   const onSubmit: SubmitHandler<LoginFormValues> = async (data, event) => {
     event?.preventDefault();
+    mutate({
+      email:data.username_or_email_or_mobile,
+      password:data.password
+    })
     // loginMutation(
     //   { route: "login", loginData: data },
     //   {
