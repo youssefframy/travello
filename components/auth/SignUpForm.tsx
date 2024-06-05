@@ -59,13 +59,7 @@ function SignUp() {
   // const { mutate: registerMutation, isPending, isError } = useRegister();
 
   const onSubmit = async (e:any) => {
-   
     e.preventDefault();
-    console.log(e.target.first_name.value)
-    console.log(e.target.last_name.value)
-    console.log(e.target.email.value)
-    console.log(e.target.password.value)
-    console.log(e.target.confirm_password.value)
     if(e.target.password.value!==e.target.confirm_password.value){
       toast.error("Password and confirm password should be same")
       return
