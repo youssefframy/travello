@@ -12,6 +12,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 import { Input } from "../ui/input";
 import InputFieldCompact from "../shared/InputFieldCompact";
+import { useMutation } from "@tanstack/react-query";
+import { signup } from "@/app/api/auth/auth.query";
+import { ACCESS_TOKEN } from "@/lib/const";
+import { toast } from "sonner";
+import Cookies from "js-cookie";
+
 // import { signUpDataSchema } from "@/lib/schemas";
 // import { signUpFormValues } from "@/lib/types";
 // import { useRegister } from "@/hooks/useRegister";
@@ -36,24 +42,53 @@ function SignUp() {
     },
   });
   // const { setUserData } = useAuthStore();
-
+  const {mutate,isPending,isSuccess,isError}=useMutation({
+    mutationFn:signup,
+    onSuccess:(res)=>{
+      // setSession(user);
+      console.log(res.token)
+      Cookies.set(ACCESS_TOKEN,res.token)
+            reset();
+            toast.success("You have been Sing up  successfully");
+    },
+    onError:()=>{
+      toast.error("Email already exist")
+    }
+  
+  })
   // const { mutate: registerMutation, isPending, isError } = useRegister();
 
-  // const onSubmit: SubmitHandler<signUpFormValues> = async (data) => {
-  //   registerMutation(data, {
-  //     onSuccess: (values) => {
-  //       setUserData({
-  //         email: data.email,
-  //         userId: values.user,
-  //       });
-  //       reset();
-  //       router.push(`/?auth=verify-signup-otp`);
-  //     },
-  //     onError: (error) => {
-  //       setErrorMsg(error.message);
-  //     },
-  //   });
-  // };
+  const onSubmit = async (e:any) => {
+   
+    e.preventDefault();
+    console.log(e.target.first_name.value)
+    console.log(e.target.last_name.value)
+    console.log(e.target.email.value)
+    console.log(e.target.password.value)
+    console.log(e.target.confirm_password.value)
+    if(e.target.password.value!==e.target.confirm_password.value){
+      toast.error("Password and confirm password should be same")
+      return
+    }
+    mutate({
+      email:e?.target?.email?.value,
+      password:e?.target?.password?.value,
+      name:e?.target?.first_name?.value+" "+e?.target?.last_name?.value
+    })
+    // registerMutation(data, {
+    //   onSuccess: (values) => {
+    //     setUserData({
+    //       email: data.email,
+    //       userId: values.user,
+    //     });
+    //     reset();
+    //     router.push(`/?auth=verify-signup-otp`);
+    //   },
+    //   onError: (error) => {
+    //     setErrorMsg(error.message);
+    //   },
+    // });
+  };
 
   return (
     <div className="my-1 flex max-h-screen flex-col items-center gap-3 overflow-y-scroll px-2">
@@ -66,7 +101,7 @@ function SignUp() {
       </span>
       <form
         className="flex w-full flex-col gap-2 font-helvetica"
-        onSubmit={handleSubmit((e) => console.log(e))}
+        onSubmit={onSubmit}
       >
         <div className="grid gap-3 md:grid-cols-2 md:gap-4">
           <InputFieldCompact
@@ -123,6 +158,9 @@ function SignUp() {
             errors.confirm_password ? errors.confirm_password.message : ""
           }
         />
+               <Button disabled={false} type="submit" className="rounded-md">
+          Sign up
+        </Button>
         <p className="text-xs text-black-400">
           By clicking Agree and continue, I accept Avitane&#39;s{" "}
           <Link href="#" className="underline">
@@ -143,6 +181,7 @@ function SignUp() {
             {errorMsg ? errorMsg : "Invalid username or password"}
           </div>
         )} */}
+        
       </form>
     </div>
   );
